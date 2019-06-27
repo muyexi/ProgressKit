@@ -21,6 +21,13 @@ open class ProgressBar: DeterminateAnimation {
         }
     }
 
+    open override func layout() {
+        super.layout()
+        
+        configureLayers()
+        updateProgress()
+    }
+
     override func notifyViewRedesigned() {
         super.notifyViewRedesigned()
         self.layer?.cornerRadius = self.frame.height / 2
